@@ -15,7 +15,7 @@ Ralph is the "Ralph Wiggum" coding technique - a simple `while true` loop that r
 ### Option 1: Clone into project
 ```bash
 git clone https://github.com/jrhe/claude-ralph-plugin.git
-cp claude-ralph-plugin/plugins/claude-ralph/{ralph.sh,prompt.md,prd.json.example} ./
+cp claude-ralph-plugin/plugins/ralph/{ralph.sh,prompt.md,prd.json.example} ./
 chmod +x ralph.sh
 ```
 
@@ -25,22 +25,22 @@ chmod +x ralph.sh
 claude plugin marketplace add jrhe/claude-ralph-plugin
 
 # Install the plugin
-claude plugin install claude-ralph
+claude plugin install ralph
 ```
 
 ## Quick Start
 
 ### 1. Generate a PRD
 ```bash
-# In Claude Code, invoke the skill:
-/prd
+# In Claude Code, invoke the command:
+/ralph:prd
 ```
 
 Answer the clarifying questions to generate a structured PRD.
 
 ### 2. Convert to JSON
 ```bash
-/ralph
+/ralph:convert-prd
 ```
 
 This converts your PRD markdown to `prd.json` format.
@@ -52,7 +52,7 @@ git checkout -b ralph/your-feature-name
 
 ### 4. Copy Scripts to Your Project
 ```bash
-/update-ralph
+/ralph:update-scripts
 ```
 
 This copies `ralph.sh` and `prompt.md` from the plugin to your current directory.
@@ -104,9 +104,9 @@ Claude will work through each user story until all pass or max iterations reache
 | `prd.json` | Task list with completion status |
 | `prd.json.example` | Example PRD format |
 | `progress.txt` | Append-only learnings log |
-| `commands/prd.md` | `/prd` command - generate PRD through guided questions |
-| `commands/ralph.md` | `/ralph` command - convert PRD to JSON |
-| `commands/update-ralph.md` | `/update-ralph` command - sync scripts to project |
+| `commands/prd.md` | `/ralph:prd` command - generate PRD through guided questions |
+| `commands/convert-prd.md` | `/ralph:convert-prd` command - convert PRD to JSON |
+| `commands/update-scripts.md` | `/ralph:update-scripts` command - sync scripts to project |
 
 ## PRD Format
 

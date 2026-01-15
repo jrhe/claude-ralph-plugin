@@ -8,11 +8,11 @@ allowed-tools: Bash
 Copying latest ralph.sh and prompt.md from the installed plugin...
 
 ```!
-PLUGIN_DIR=$(ls -d ~/.claude/plugins/cache/claude-ralph-plugin/claude-ralph/*/ 2>/dev/null | sort -V | tail -1)
+PLUGIN_DIR=$(ls -d ~/.claude/plugins/cache/claude-ralph-plugin/ralph/*/ 2>/dev/null | sort -V | tail -1)
 
 if [[ -z "$PLUGIN_DIR" ]]; then
     echo "ERROR: Plugin not found."
-    echo "Install with: claude plugin marketplace add jrhe/claude-ralph-plugin && claude plugin install claude-ralph"
+    echo "Install with: claude plugin marketplace add jrhe/claude-ralph-plugin && claude plugin install ralph"
     exit 1
 fi
 

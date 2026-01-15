@@ -106,4 +106,4 @@ Each user story must:
 Do NOT begin implementation. Only create the PRD document.
 
 After creating the PRD, tell the user:
-> "PRD saved to `tasks/prd-[name].md`. Use `/ralph` to convert it to prd.json for autonomous execution."
+> "PRD saved to `tasks/prd-[name].md`. Use `/ralph:convert-prd` to convert it to prd.json for autonomous execution."

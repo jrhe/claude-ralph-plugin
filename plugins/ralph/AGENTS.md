@@ -11,11 +11,11 @@ Ralph is an autonomous AI agent loop that runs Claude Code repeatedly until all 
 # Example: run up to 20 iterations
 ./ralph.sh 20
 
-# Generate a PRD (invoke skill)
-/prd
+# Generate a PRD (invoke command)
+/ralph:prd
 
-# Convert PRD to JSON (invoke skill)
-/ralph
+# Convert PRD to JSON (invoke command)
+/ralph:convert-prd
 ```
 
 ## Key Files
@@ -56,10 +56,10 @@ Ralph is an autonomous AI agent loop that runs Claude Code repeatedly until all 
 ## Workflow
 
 ### 1. Generate PRD
-Use the `/prd` skill to create a detailed requirements document through guided questions.
+Use the `/ralph:prd` command to create a detailed requirements document through guided questions.
 
 ### 2. Convert to JSON
-Use the `/ralph` skill to convert the markdown PRD to structured `prd.json`.
+Use the `/ralph:convert-prd` command to convert the markdown PRD to structured `prd.json`.
 
 ### 3. Create Branch
 ```bash

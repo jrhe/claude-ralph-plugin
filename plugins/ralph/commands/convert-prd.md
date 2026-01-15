@@ -116,7 +116,7 @@ PRD converted to prd.json with N user stories.
 Next steps:
 1. git checkout -b ralph/feature-name
 2. Review prd.json and adjust if needed
-3. Run /update-ralph to copy scripts to your project
+3. Run /ralph:update-scripts to copy scripts to your project
 4. Run: ./ralph.sh
 
 Example: ./ralph.sh      # infinite
