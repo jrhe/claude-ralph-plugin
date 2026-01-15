@@ -22,7 +22,7 @@ chmod +x ralph.sh
 ### Option 2: Claude Code plugin
 ```bash
 # Add the marketplace
-claude plugin marketplace add github:jrhe/claude-ralph-plugin
+claude plugin marketplace add jrhe/claude-ralph-plugin
 
 # Install the plugin
 claude plugin install claude-ralph-plugin
