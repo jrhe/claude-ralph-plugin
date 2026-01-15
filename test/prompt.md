@@ -61,19 +61,13 @@ Append to `progress.txt`:
 
 ## Completion Signal
 
-When ALL user stories have `passes: true`:
+When ALL user stories have `passes: true`, output:
 
-1. Create the completion marker file:
-   ```bash
-   touch .ralph-complete
-   ```
+```
+<promise>COMPLETE</promise>
+```
 
-2. Output completion message:
-   ```
-   All stories complete! Created .ralph-complete marker.
-   ```
-
-The loop script checks for this file to exit successfully.
+This signals the loop to exit successfully.
 
 ## Important Rules
 
