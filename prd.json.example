@@ -1,0 +1,65 @@
+{
+  "project": "MyApp",
+  "branchName": "ralph/task-priority",
+  "description": "Task Priority System - Add priority levels to tasks with sorting and filtering",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add priority field to task model",
+      "description": "As a developer, I want a priority field on the task model so that tasks can be categorized by importance",
+      "acceptanceCriteria": [
+        "Add `priority` field to Task model/type (enum: low, medium, high, urgent)",
+        "Add database migration if applicable",
+        "Default priority is 'medium'",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Priority selection in task form",
+      "description": "As a user, I want to select a priority when creating or editing a task so that I can indicate importance",
+      "acceptanceCriteria": [
+        "Add priority dropdown to task creation form",
+        "Add priority dropdown to task edit form",
+        "Show appropriate icons/colors for each priority level",
+        "Typecheck passes",
+        "Verify in browser"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Display priority in task list",
+      "description": "As a user, I want to see task priorities in the list view so I can quickly identify important tasks",
+      "acceptanceCriteria": [
+        "Show priority badge/indicator on each task in list",
+        "Use consistent color coding (e.g., red=urgent, orange=high, blue=medium, gray=low)",
+        "Typecheck passes",
+        "Verify in browser"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Sort tasks by priority",
+      "description": "As a user, I want to sort tasks by priority so that I can focus on the most important items first",
+      "acceptanceCriteria": [
+        "Add 'Sort by Priority' option to task list",
+        "Urgent tasks appear first, then high, medium, low",
+        "Persist sort preference in user settings or URL",
+        "Typecheck passes",
+        "Verify in browser"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

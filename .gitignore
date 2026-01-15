@@ -1,0 +1,21 @@
+# Ralph state files (per-project, not part of plugin)
+prd.json
+progress.txt
+.last-branch
+
+# Archives
+archive/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Node modules (if testing locally)
+node_modules/
