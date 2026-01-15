@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-ralph-plugin",
+  "description": "Autonomous AI agent loop for Claude Code - faithfully adapted from the original Ralph for Amp",
+  "owner": {
+    "name": "jrhe",
+    "email": "jon@jrhe.co.uk"
+  },
+  "plugins": [
+    {
+      "name": "claude-ralph",
+      "description": "Autonomous AI agent loop using external bash script. Runs Claude in a loop with fresh context each iteration, working through PRD user stories until completion.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jrhe",
+        "email": "jon@jrhe.co.uk"
+      },
+      "source": "./plugins/claude-ralph",
+      "category": "development",
+      "homepage": "https://github.com/jrhe/claude-ralph-plugin"
+    }
+  ]
+}

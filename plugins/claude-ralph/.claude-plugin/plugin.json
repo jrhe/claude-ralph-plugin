@@ -2,7 +2,8 @@
   "name": "claude-ralph",
   "description": "Autonomous AI agent loop for Claude Code. Run Claude in a bash loop until PRD completion, with fresh context each iteration. Faithful adaptation of the original Ralph Wiggum technique.",
   "author": {
-    "name": "Jon",
-    "email": "jon@example.com"
-  }
+    "name": "jrhe",
+    "email": "jon@jrhe.co.uk"
+  },
+  "version": "1.0.0"
 }

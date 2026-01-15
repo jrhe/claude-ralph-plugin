@@ -15,7 +15,7 @@ Ralph is the "Ralph Wiggum" coding technique - a simple `while true` loop that r
 ### Option 1: Clone into project
 ```bash
 git clone https://github.com/jrhe/claude-ralph-plugin.git
-cp claude-ralph-plugin/{ralph.sh,prompt.md,prd.json.example} ./
+cp claude-ralph-plugin/plugins/claude-ralph/{ralph.sh,prompt.md,prd.json.example} ./
 chmod +x ralph.sh
 ```
 
@@ -25,7 +25,7 @@ chmod +x ralph.sh
 claude plugin marketplace add jrhe/claude-ralph-plugin
 
 # Install the plugin
-claude plugin install claude-ralph-plugin
+claude plugin install claude-ralph
 ```
 
 ## Quick Start
