@@ -116,10 +116,11 @@ PRD converted to prd.json with N user stories.
 Next steps:
 1. git checkout -b ralph/feature-name
 2. Review prd.json and adjust if needed
-3. Copy ralph.sh and prompt.md to your project
-4. Run: ./ralph.sh [max_iterations]
+3. Run /update-ralph to copy scripts to your project
+4. Run: ./ralph.sh
 
-Example: ./ralph.sh 20
+Example: ./ralph.sh      # infinite
+         ./ralph.sh 20   # max 20 iterations
 ```
 
 ## Branch Naming

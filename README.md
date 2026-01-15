@@ -50,9 +50,17 @@ This converts your PRD markdown to `prd.json` format.
 git checkout -b ralph/your-feature-name
 ```
 
-### 4. Run Ralph
+### 4. Copy Scripts to Your Project
 ```bash
-./ralph.sh 20  # Run up to 20 iterations
+/update-ralph
+```
+
+This copies `ralph.sh` and `prompt.md` from the plugin to your current directory.
+
+### 5. Run Ralph
+```bash
+./ralph.sh      # Run infinitely until complete (Ctrl+C to stop)
+./ralph.sh 20   # Or limit to 20 iterations
 ```
 
 Claude will work through each user story until all pass or max iterations reached.
@@ -96,8 +104,9 @@ Claude will work through each user story until all pass or max iterations reache
 | `prd.json` | Task list with completion status |
 | `prd.json.example` | Example PRD format |
 | `progress.txt` | Append-only learnings log |
-| `skills/prd/SKILL.md` | PRD generation skill |
-| `skills/ralph/SKILL.md` | PRD-to-JSON conversion skill |
+| `commands/prd.md` | `/prd` command - generate PRD through guided questions |
+| `commands/ralph.md` | `/ralph` command - convert PRD to JSON |
+| `commands/update-ralph.md` | `/update-ralph` command - sync scripts to project |
 
 ## PRD Format
 
