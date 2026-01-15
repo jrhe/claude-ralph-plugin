@@ -90,6 +90,13 @@ fi
 # Main loop
 i=1
 while true; do
+    # Set terminal title for iteration visibility
+    if [[ $MAX_ITERATIONS -eq 0 ]]; then
+        echo -ne "\033]0;Ralph - Iteration $i\007"
+    else
+        echo -ne "\033]0;Ralph - Iteration $i of $MAX_ITERATIONS\007"
+    fi
+
     echo -e "${BLUE}======================================${NC}"
     if [[ $MAX_ITERATIONS -eq 0 ]]; then
         echo -e "${BLUE}  Iteration $i${NC}"
@@ -108,10 +115,9 @@ while true; do
     echo -e "${GREEN}Starting Claude...${NC}"
     echo ""
 
-    # Capture output to check for completion
-    OUTPUT=$(claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" 2>&1) || true
+    # Capture output while streaming in real-time (tee to stderr)
+    OUTPUT=$(claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" 2>&1 | tee /dev/stderr) || true
 
-    echo "$OUTPUT"
     echo ""
 
     # Check for completion signal
