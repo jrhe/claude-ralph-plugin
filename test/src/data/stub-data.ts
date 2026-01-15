@@ -5,7 +5,7 @@ export const cats: Cat[] = [
   {
     id: 'cat-1',
     name: 'Whiskers',
-    photoUrl: '/cats/whiskers.jpg',
+    photoUrl: '/cats/whiskers.svg',
     birthDate: '2020-03-15',
     breed: 'Tabby',
     targetWeight: 4.5,
@@ -13,7 +13,7 @@ export const cats: Cat[] = [
   {
     id: 'cat-2',
     name: 'Luna',
-    photoUrl: '/cats/luna.jpg',
+    photoUrl: '/cats/luna.svg',
     birthDate: '2019-08-22',
     breed: 'Siamese',
     targetWeight: 4.0,
@@ -21,7 +21,7 @@ export const cats: Cat[] = [
   {
     id: 'cat-3',
     name: 'Oliver',
-    photoUrl: '/cats/oliver.jpg',
+    photoUrl: '/cats/oliver.svg',
     birthDate: '2021-01-10',
     breed: 'Maine Coon',
     targetWeight: 6.5,
