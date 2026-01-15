@@ -1,4 +1,5 @@
 ---
+name: ralph
 description: Convert a PRD markdown file to prd.json for Ralph autonomous execution
 ---
 

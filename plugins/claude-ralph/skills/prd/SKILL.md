@@ -1,4 +1,5 @@
 ---
+name: prd
 description: Generate a Product Requirements Document (PRD) through guided questions
 ---
 
