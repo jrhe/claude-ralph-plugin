@@ -141,9 +141,5 @@ while true; do
         exit 1
     fi
 
-    # Pause between iterations
-    echo -e "${YELLOW}Pausing 2 seconds before next iteration...${NC}"
-    sleep 2
-
     ((i++))
 done

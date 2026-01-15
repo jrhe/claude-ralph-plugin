@@ -10,7 +10,7 @@
     {
       "name": "claude-ralph",
       "description": "Autonomous AI agent loop using external bash script. Runs Claude in a loop with fresh context each iteration, working through PRD user stories until completion.",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "author": {
         "name": "jrhe",
         "email": "jon@jrhe.co.uk"
