@@ -59,8 +59,8 @@ Append to `progress.txt`:
 - Any gotchas discovered
 ```
 
-### 10. STOP
-**Your iteration is complete.** Do not continue to another story. The loop will spawn a fresh instance for the next story.
+### 10. Exit
+**Your iteration is complete.** Type `/exit` to end this session. The loop will spawn a fresh instance for the next story.
 
 ## Completion Signal
 
