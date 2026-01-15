@@ -14,14 +14,14 @@ Ralph is the "Ralph Wiggum" coding technique - a simple `while true` loop that r
 
 ### Option 1: Clone into project
 ```bash
-git clone https://github.com/yourusername/claude-ralph-plugin.git
+git clone https://github.com/jrhe/claude-ralph-plugin.git
 cp claude-ralph-plugin/{ralph.sh,prompt.md,prd.json.example} ./
 chmod +x ralph.sh
 ```
 
 ### Option 2: Claude Code plugin
 ```bash
-claude plugins add github:yourusername/claude-ralph-plugin
+claude plugins add github:jrhe/claude-ralph-plugin
 ```
 
 ## Quick Start
