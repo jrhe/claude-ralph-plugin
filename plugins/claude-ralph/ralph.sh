@@ -7,7 +7,8 @@
 set -e
 
 # Configuration
-MAX_ITERATIONS=${1:-10}
+# 0 = infinite (default, true to original Ralph spirit)
+MAX_ITERATIONS=${1:-0}
 PROMPT_FILE="prompt.md"
 PRD_FILE="prd.json"
 PROGRESS_FILE="progress.txt"
@@ -49,7 +50,11 @@ fi
 CURRENT_BRANCH=$(jq -r '.branchName' "$PRD_FILE")
 echo -e "${YELLOW}Project:${NC} $(jq -r '.project' "$PRD_FILE")"
 echo -e "${YELLOW}Branch:${NC} $CURRENT_BRANCH"
-echo -e "${YELLOW}Max iterations:${NC} $MAX_ITERATIONS"
+if [[ $MAX_ITERATIONS -eq 0 ]]; then
+    echo -e "${YELLOW}Max iterations:${NC} infinite (Ctrl+C to stop)"
+else
+    echo -e "${YELLOW}Max iterations:${NC} $MAX_ITERATIONS"
+fi
 echo ""
 
 # Handle branch change - archive previous run
@@ -83,9 +88,14 @@ if [[ ! -f "$PROGRESS_FILE" ]]; then
 fi
 
 # Main loop
-for ((i=1; i<=MAX_ITERATIONS; i++)); do
+i=1
+while true; do
     echo -e "${BLUE}======================================${NC}"
-    echo -e "${BLUE}  Iteration $i of $MAX_ITERATIONS${NC}"
+    if [[ $MAX_ITERATIONS -eq 0 ]]; then
+        echo -e "${BLUE}  Iteration $i${NC}"
+    else
+        echo -e "${BLUE}  Iteration $i of $MAX_ITERATIONS${NC}"
+    fi
     echo -e "${BLUE}======================================${NC}"
     echo ""
 
@@ -113,18 +123,21 @@ for ((i=1; i<=MAX_ITERATIONS; i++)); do
         exit 0
     fi
 
-    # Pause between iterations
-    if [[ $i -lt $MAX_ITERATIONS ]]; then
-        echo -e "${YELLOW}Pausing 2 seconds before next iteration...${NC}"
-        sleep 2
+    # Check if max iterations reached (if not infinite)
+    if [[ $MAX_ITERATIONS -gt 0 ]] && [[ $i -ge $MAX_ITERATIONS ]]; then
+        echo ""
+        echo -e "${RED}======================================${NC}"
+        echo -e "${RED}  Max iterations ($MAX_ITERATIONS) reached${NC}"
+        echo -e "${RED}  without completion signal.${NC}"
+        echo -e "${RED}======================================${NC}"
+        echo ""
+        echo "Check progress.txt for learnings and prd.json for status."
+        exit 1
     fi
-done
 
-echo ""
-echo -e "${RED}======================================${NC}"
-echo -e "${RED}  Max iterations ($MAX_ITERATIONS) reached${NC}"
-echo -e "${RED}  without completion signal.${NC}"
-echo -e "${RED}======================================${NC}"
-echo ""
-echo "Check progress.txt for learnings and prd.json for status."
-exit 1
+    # Pause between iterations
+    echo -e "${YELLOW}Pausing 2 seconds before next iteration...${NC}"
+    sleep 2
+
+    ((i++))
+done
