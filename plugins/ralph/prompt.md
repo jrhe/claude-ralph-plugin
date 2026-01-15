@@ -59,6 +59,9 @@ Append to `progress.txt`:
 - Any gotchas discovered
 ```
 
+### 10. STOP
+**Your iteration is complete.** Do not continue to another story. The loop will spawn a fresh instance for the next story.
+
 ## Completion Signal
 
 When ALL user stories have `passes: true`:
@@ -77,7 +80,7 @@ The loop script checks for this file to exit successfully.
 
 ## Important Rules
 
-1. **One story per iteration** - Don't try to do multiple stories
+1. **One story per iteration** - Complete ONE story then STOP. Do not start another story.
 2. **Never commit broken code** - All checks must pass first
 3. **Keep changes small** - If a story is too big, note it and do what you can
 4. **Learn from history** - Read progress.txt and git log
