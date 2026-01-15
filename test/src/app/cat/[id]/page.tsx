@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { dataService } from '@/services';
+import { WeightChart } from '@/components';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -15,8 +16,8 @@ export default async function CatProfilePage({ params }: PageProps) {
     notFound();
   }
 
-  // Get the latest metrics
-  const metrics = await dataService.getMetricsForCat(id, '7d');
+  // Get all metrics for charts (90 days is max in stub data)
+  const metrics = await dataService.getMetricsForCat(id, '90d');
   const latestMetrics = metrics[metrics.length - 1];
 
   // Calculate age if birthDate is available
@@ -123,6 +124,11 @@ export default async function CatProfilePage({ params }: PageProps) {
           ) : (
             <p className="text-zinc-500 dark:text-zinc-400">No metrics available</p>
           )}
+        </div>
+
+        {/* Weight Chart */}
+        <div className="mt-6">
+          <WeightChart metrics={metrics} targetWeight={cat.targetWeight} />
         </div>
       </main>
     </div>
