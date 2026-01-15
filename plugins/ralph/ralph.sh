@@ -116,9 +116,16 @@ while true; do
     echo ""
 
     # Run Claude with full terminal UI via pseudo-TTY (script provides TTY for interactive output)
-    script -q /dev/null claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" || true
+    set +e
+    script -q /dev/null claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
+    exit_code=$?
+    set -e
 
     echo ""
+
+    if [[ $exit_code -ne 0 ]]; then
+        echo -e "${YELLOW}Claude exited with code $exit_code${NC}"
+    fi
 
     # Check for completion file (created by Claude when all stories done)
     if [[ -f .ralph-complete ]]; then
