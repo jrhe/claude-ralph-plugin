@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { dataService } from '@/services';
-import { WeightChart } from '@/components';
+import { WeightChart, FoodChart } from '@/components';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -129,6 +129,11 @@ export default async function CatProfilePage({ params }: PageProps) {
         {/* Weight Chart */}
         <div className="mt-6">
           <WeightChart metrics={metrics} targetWeight={cat.targetWeight} />
+        </div>
+
+        {/* Food Chart */}
+        <div className="mt-6">
+          <FoodChart metrics={metrics} />
         </div>
       </main>
     </div>
