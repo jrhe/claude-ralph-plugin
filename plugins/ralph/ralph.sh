@@ -115,8 +115,8 @@ while true; do
     echo -e "${GREEN}Starting Claude...${NC}"
     echo ""
 
-    # Run Claude with full terminal UI (no output capture)
-    claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" || true
+    # Run Claude with full terminal UI via pseudo-TTY (script provides TTY for interactive output)
+    script -q /dev/null claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" || true
 
     echo ""
 

@@ -115,13 +115,14 @@ while true; do
     echo -e "${GREEN}Starting Claude...${NC}"
     echo ""
 
-    # Capture output while streaming in real-time (tee to stderr)
-    OUTPUT=$(claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" 2>&1 | tee /dev/stderr) || true
+    # Run Claude with full terminal UI (no output capture)
+    claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")" || true
 
     echo ""
 
-    # Check for completion signal
-    if echo "$OUTPUT" | grep -q "<promise>COMPLETE</promise>"; then
+    # Check for completion file (created by Claude when all stories done)
+    if [[ -f .ralph-complete ]]; then
+        rm .ralph-complete
         echo ""
         echo -e "${GREEN}======================================${NC}"
         echo -e "${GREEN}  COMPLETE! All stories finished.${NC}"
